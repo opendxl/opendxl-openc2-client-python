@@ -22,6 +22,9 @@ from common import *
 logging.getLogger().setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
+# The host to retrieve the GeoLocation report for
+HOST = "opendxl.com"
+
 # Create DXL configuration from file
 config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
 
@@ -49,7 +52,7 @@ with DxlClient(config) as dxl_client:
     cmd = openc2.v10.Command(
         action="query",
         target=openc2.v10.Properties(properties=["geolocation"]),
-        actuator=MaxMindActuator(host="mcafee.com")
+        actuator=MaxMindActuator(host=HOST)
     )
     response = client.send_command('/openc2-maxmind/service/api', cmd)
     response_dict = MessageUtils.json_to_dict(response.serialize())

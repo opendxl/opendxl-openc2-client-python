@@ -22,6 +22,9 @@ from common import *
 logging.getLogger().setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
+# The domain to retrieve the report for
+DOMAIN = "opendxl.com"
+
 # Create DXL configuration from file
 config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
 
@@ -49,7 +52,7 @@ with DxlClient(config) as dxl_client:
     cmd = openc2.v10.Command(
         action="query",
         target=openc2.v10.Properties(properties=["domain-report"]),
-        actuator=VirusTotalActuator(domain="mcafee.com")
+        actuator=VirusTotalActuator(domain=DOMAIN)
     )
     response = client.send_command('/openc2-virustotal/service/api', cmd)
     response_dict = MessageUtils.json_to_dict(response.serialize())

@@ -22,6 +22,9 @@ from common import *
 logging.getLogger().setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
+# The file hash to retrieve the file report for
+FILE_HASH = "7657fcb7d772448a6d8504e4b20168b8"
+
 # Create DXL configuration from file
 config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
 
@@ -49,7 +52,7 @@ with DxlClient(config) as dxl_client:
     cmd = openc2.v10.Command(
         action="query",
         target=openc2.v10.Properties(properties=["file-report"]),
-        actuator=VirusTotalActuator(resource="7657fcb7d772448a6d8504e4b20168b8")
+        actuator=VirusTotalActuator(resource=FILE_HASH)
     )
     response = client.send_command('/openc2-virustotal/service/api', cmd)
     response_dict = MessageUtils.json_to_dict(response.serialize())

@@ -22,6 +22,9 @@ from common import *
 logging.getLogger().setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
+# The IP address to retrieve the report for
+IP_ADDRESS = "34.223.189.43"
+
 # Create DXL configuration from file
 config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
 
@@ -49,7 +52,7 @@ with DxlClient(config) as dxl_client:
     cmd = openc2.v10.Command(
         action="query",
         target=openc2.v10.Properties(properties=["ip-address-report"]),
-        actuator=VirusTotalActuator(ip="18.27.197.252")
+        actuator=VirusTotalActuator(ip=IP_ADDRESS)
     )
     response = client.send_command('/openc2-virustotal/service/api', cmd)
     response_dict = MessageUtils.json_to_dict(response.serialize())
