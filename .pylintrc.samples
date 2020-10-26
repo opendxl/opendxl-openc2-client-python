@@ -138,7 +138,8 @@ disable=print-statement,
         undefined-variable,
         logging-not-lazy,
         import-error,
-        similarities
+        similarities,
+        useless-object-inheritance
 
 
 # Enable the message, report, category or checker with the given id(s). You can
