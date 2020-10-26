@@ -30,7 +30,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = "DXL OpenC2 Client"
+project = "OpenC2 DXL Client Library"
 copyright = "2020"
 
 # The version info for the project you're documenting, acts as replacement for

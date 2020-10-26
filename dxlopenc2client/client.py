@@ -8,7 +8,7 @@ import openc2
 
 class OpenC2Client(Client):
     """
-    The "DXL OpenC2 Client" client wrapper class.
+    The Open Command and Control (OpenC2) client wrapper class.
     """
 
     def __init__(self, dxl_client): # pylint: disable=useless-super-delegation
@@ -20,6 +20,18 @@ class OpenC2Client(Client):
         super(OpenC2Client, self).__init__(dxl_client)
 
     def send_command(self, topic, command):
+        """
+        Sends an Open Command and Control (OpenC2) message to the
+        specified DXL service and returns the response.
+
+        The `Lycan library <https://github.com/oasis-open/openc2-lycan-python>`_
+        contains the OpenC2 classes (Command, Response, etc.).
+
+        :param topic: The DXL service topic to send the OpenC2 command to
+        :param command: The `openc2.v10.Command` to send to the DXL service
+        :return: The `openc2.v10.Response` received from the DXL service
+        """
+
         # Create the DXL request message
         request = Request(topic)
 
