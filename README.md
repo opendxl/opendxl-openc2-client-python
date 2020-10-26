@@ -28,6 +28,8 @@ To start using the OpenC2 DXL Python Client Library:
   
 ## Example
 
+Below is an example usage of the OpenC2 DXL Python client library. In this particular case, a service is queried for a GeoLocation report using the OpenC2 command and control language.
+
 ```python
 # Create DXL configuration from file
 config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
@@ -56,7 +58,7 @@ with DxlClient(config) as dxl_client:
     cmd = openc2.v10.Command(
         action="query",
         target=openc2.v10.Properties(properties=["geolocation"]),
-        actuator=MaxMindActuator(host="mcafee.com")
+        actuator=MaxMindActuator(host="opendxl.com")
     )
     response = client.send_command('/openc2-maxmind/service/api', cmd)
 ```
