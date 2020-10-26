@@ -1,0 +1,17 @@
+dxlopenc2client package
+=======================
+
+Submodules
+----------
+
+.. toctree::
+
+   dxlopenc2client.client
+
+Module contents
+---------------
+
+.. automodule:: dxlopenc2client
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+dxlopenc2client.client module
+=============================
+
+.. automodule:: dxlopenc2client.client
+    :members:
+    :undoc-members:
+    :show-inheritance:
