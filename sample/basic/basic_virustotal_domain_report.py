@@ -42,7 +42,7 @@ with DxlClient(config) as dxl_client:
             ("domain", stix2.properties.StringProperty(required=True))
         ]
     )
-    class VirusTotalActuator(object):
+    class VirusTotalActuator(object):  # pylint: disable=useless-object-inheritance
         pass
 
     # Send the command and receive the response

@@ -42,7 +42,7 @@ with DxlClient(config) as dxl_client:
             ("host", stix2.properties.StringProperty(required=True))
         ]
     )
-    class MaxMindActuator(object):
+    class MaxMindActuator(object):  # pylint: disable=useless-object-inheritance
         pass
 
     # Send the command and receive the response

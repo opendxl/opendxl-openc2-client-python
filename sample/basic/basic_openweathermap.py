@@ -42,7 +42,7 @@ with DxlClient(config) as dxl_client:
             ("zip", stix2.properties.StringProperty(required=True))
         ]
     )
-    class OpenWeatherMapActuator(object):
+    class OpenWeatherMapActuator(object):  # pylint: disable=useless-object-inheritance
         pass
 
     # Send the command and receive the response
