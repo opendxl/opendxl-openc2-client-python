@@ -49,7 +49,7 @@ with DxlClient(config) as dxl_client:
     cmd = openc2.v10.Command(
         action="query",
         target=openc2.v10.Properties(properties=["forecast"]),
-        actuator=OpenWeatherMapActuator(zip="97140")        
+        actuator=OpenWeatherMapActuator(zip="97140")
     )
     response = client.send_command('/openc2-openweathermap/service/api', cmd)
     response_dict = MessageUtils.json_to_dict(response.serialize())

@@ -11,7 +11,7 @@ class OpenC2Client(Client):
     The "DXL OpenC2 Client" client wrapper class.
     """
 
-    def __init__(self, dxl_client):
+    def __init__(self, dxl_client): # pylint: disable=useless-super-delegation
         """
         Constructor parameters:
 
@@ -25,13 +25,13 @@ class OpenC2Client(Client):
 
         # Serialize and encode the OpenC2 command
         request.payload = command.serialize().encode()
-    
+
         # Perform a synchronous DXL request
         response = self._dxl_sync_request(request)
-        
+
         if response.message_type == Message.MESSAGE_TYPE_ERROR:
             raise Exception(response.error_message)
-        
-        # Return the response        
+
+        # Return the response
         response_dict = MessageUtils.json_payload_to_dict(response)
         return openc2.v10.Response(**response_dict)

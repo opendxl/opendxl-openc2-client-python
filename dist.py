@@ -9,9 +9,8 @@ from distutils.file_util import copy_file, move_file
 from distutils.core import run_setup
 from distutils.archive_util import make_archive
 
-
 # Run clean
-import clean
+import clean # pylint: disable=unused-import
 
 def replace(file_path, pattern, subst):
     # Create temp file
@@ -26,7 +25,7 @@ def replace(file_path, pattern, subst):
     # Move new file
     move(abs_path, file_path)
 
-print("Starting dist.\n")
+print("Starting dist.\n") # pylint: disable=unused-import
 
 VERSION = __import__('dxlopenc2client').get_version()
 RELEASE_NAME = "dxlopenc2client-python-dist-" + str(VERSION)
@@ -63,7 +62,11 @@ copy_file(os.path.join(DIST_PY_FILE_LOCATION, "doc", "docutils.conf"),
 copy_tree(os.path.join(DIST_PY_FILE_LOCATION, "doc", "sdk"), DIST_DOCTMP_DIR)
 
 print("\nCalling sphinx-build\n")
-subprocess.check_call(["sphinx-build", "-b", "html", DIST_DOCTMP_DIR, os.path.join(DIST_DIRECTORY, "doc")])
+subprocess.check_call(["sphinx-build",
+                       "-b",
+                       "html",
+                       DIST_DOCTMP_DIR,
+                       os.path.join(DIST_DIRECTORY, "doc")])
 
 replace(os.path.join(DIST_DIRECTORY, "doc", "_static", "classic.css"),
         "text-align: justify", "text-align: none")
