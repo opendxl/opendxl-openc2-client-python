@@ -45,7 +45,7 @@ with DxlClient(config) as dxl_client:
     # Create client wrapper
     client = OpenC2Client(dxl_client)
 
-    # Custom Actuator (VirusTotal)
+    # Custom Actuator (MaxMind GeoLocation)
     @openc2.v10.CustomActuator(
         "x-maxmind", [
             ("host", stix2.properties.StringProperty(required=True))
