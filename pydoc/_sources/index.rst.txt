@@ -1,4 +1,4 @@
-DXL OpenC2 Client
+OpenC2 DXL Client
 =================
 
 Introduction
@@ -16,20 +16,6 @@ Installation
 	:maxdepth: 1
 
 	installation
-
-Samples
--------
-
-Configuration
-
-.. toctree::
-    :maxdepth: 1
-
-    sampleconfig
-
-Basic
-
-    TODO: Provide samples documentation
 
 Python API
 ----------
