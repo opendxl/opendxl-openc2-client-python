@@ -1,25 +1,36 @@
-DXL OpenC2 Client
-=================
+OpenC2 DXL Python Client Library
+================================
 
 Overview
 --------
 
-TODO: Provide overview
+The OpenC2 DXL Python client library provides a high level wrapper for sending and receiving 
+`OpenC2 <https://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html>`_ command and control messages 
+via the `Data Exchange Layer <http://www.mcafee.com/us/solutions/data-exchange-layer.aspx>`_ (DXL) fabric.
+
+This library utilizes `Lycan <https://github.com/oasis-open/openc2-lycan-python>`_, an implementation 
+of the OpenC2 OASIS standard for command and control messaging.
 
 Documentation
 -------------
 
-TODO: Provide documentation information
+See the `GitHub Wiki <https://github.com/opendxl/opendxl-openc2-client-python/wiki>`_ for an overview of the OpenC2 DXL
+Python Client Library and examples.
+
+See the `OpenC2 DXL Python Client Library <https://opendxl.github.io/opendxl-openc2-client-python/pydoc>`_ for
+installation instructions, API documentation, and examples.
 
 Bugs and Feedback
 -----------------
 
-TODO: Provide bugs and feedback information
+For bugs, questions and discussions please use the `GitHub Issues <https://github.com/opendxl/opendxl-openc2-client-python/issues>`_.
 
 LICENSE
 -------
 
-Copyright 2020
+Copyright 2020 McAfee LLC
 
-TODO: Provide license information
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
+License. You may obtain a copy of the License at
 
+`<http://www.apache.org/licenses/LICENSE-2.0>`_
