@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - gh-pages
+      - test
   pull_request:
   schedule:
     - cron:  '0 0 * * *'
