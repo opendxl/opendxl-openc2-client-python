@@ -25,6 +25,41 @@ To start using the OpenC2 DXL Python Client Library:
 * View the `README.html` file located at the root of the extracted files.
   * The `README` links to the documentation which includes installation instructions, API details, and samples.
   * The SDK documentation is also available on-line [here](https://opendxl.github.io/opendxl-openc2-client-python/pydoc).
+  
+## Example
+
+```python
+# Create DXL configuration from file
+config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
+
+# Create the client
+with DxlClient(config) as dxl_client:
+
+    # Connect to the fabric
+    dxl_client.connect()
+
+    logger.info("Connected to DXL fabric.")
+
+    # Create client wrapper
+    client = OpenC2Client(dxl_client)
+
+    # Custom Actuator (VirusTotal)
+    @openc2.v10.CustomActuator(
+        "x-maxmind", [
+            ("host", stix2.properties.StringProperty(required=True))
+        ]
+    )
+    class MaxMindActuator(object):
+        pass
+
+    # Send the command and receive the response
+    cmd = openc2.v10.Command(
+        action="query",
+        target=openc2.v10.Properties(properties=["geolocation"]),
+        actuator=MaxMindActuator(host="mcafee.com")
+    )
+    response = client.send_command('/openc2-maxmind/service/api', cmd)
+```
 
 ## Bugs and Feedback
 
