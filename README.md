@@ -8,7 +8,7 @@
 
 The OpenC2 DXL Python client library provides a high level wrapper for sending and receiving [OpenC2](https://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html) command and control messages via the [Data Exchange Layer](http://www.mcafee.com/us/solutions/data-exchange-layer.aspx) (DXL) fabric.
 
-This library utilizes [Lycan](https://github.com/oasis-open/openc2-lycan-python), which is an implementation of the OpenC2 OASIS standard for command and control messaging.
+This library utilizes [Lycan](https://github.com/oasis-open/openc2-lycan-python), an implementation of the OpenC2 OASIS standard for command and control messaging.
 
 ## Documentation
 
