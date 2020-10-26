@@ -1,0 +1,8 @@
+MANIFEST
+dist/
+*.pyc
+build/
+dxlopenc2client.egg-info/
+*.csr
+*.key
+*.crt
